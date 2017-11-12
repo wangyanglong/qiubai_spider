@@ -18,12 +18,17 @@ class qiubai_spider(Spider):
 		article_iterator = response.xpath('//div[@id="content-left"]/div[contains(@class,"article block")]')
 		for article in article_iterator:
 			item = QiubaiItem()
-			_id = article.xpath('.//@id').extract_first()
-			item['_id'] = _id
+			item['_qid'] = article.xpath('.//@id').extract_first()
 			try:
 				item['_type'] = article.xpath('.//@class').extract_first()
-				item['_author'] = article.xpath('.//div[@class="author clearfix"]/a[1]/img/@alt').extract_first()
-				item['_avatar'] = article.xpath('.//div[@class="author clearfix"]/a[1]/img/@src').extract_first()
+				try:
+					item['_author'] = article.xpath('.//div[@class="author clearfix"]/a[1]/@href').extract_first()
+				except Exception,e:
+					log.error("item parse author id error:%r",e)
+				try:
+					item['_pic'] = article.xpath('.//div[@class="thumb"]/a/img/@src').extract_first()
+				except Exception,e:
+					log.error("try to parse articel pic error:%r",r)
 				item['_url'] = article.xpath('.//a[contains(@href,"article")]/@href').extract_first()
 				item['_content'] = article.xpath('.//a/div[@class="content"]/span/text()').extract_first()
 				item['_like'] = article.xpath('.//div[@class="stats"]/span[@class="stats-vote"]/i/text()').extract_first()
@@ -31,5 +36,4 @@ class qiubai_spider(Spider):
 			except Exception, e:
 				item['_status'] = const.SPIDER_STATUS_FAILED
 				self.logger.error('parse item error:%r',e)
-			self.logger.info('parse item:%r',item)
 			yield item

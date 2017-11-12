@@ -14,6 +14,7 @@ BOT_NAME = 'qiubai'
 SPIDER_MODULES = ['qiubai.spiders']
 NEWSPIDER_MODULE = 'qiubai.spiders'
 
+LOG_STDOUT = 2
 LOG_LEVEL = 'INFO'
 LOG_FILE = 'logs/spider.log'
 LOG_FORMAT ='%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s'
@@ -67,9 +68,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'qiubai.pipelines.QiubaiPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'qiubai.pipelines.QiubaiPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
