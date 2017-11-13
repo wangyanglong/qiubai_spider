@@ -20,4 +20,5 @@ class QiubaiItem(scrapy.Item):
     _pic = scrapy.Field()
     _like = scrapy.Field()
     _status = scrapy.Field()
+    _update = scrapy.Field()
     # comment = scrapy.Field()

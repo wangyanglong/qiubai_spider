@@ -1,12 +1,12 @@
 
-INFO 2017-11-12 18:34:58 [scrapy.utils.log:log:log_scrapy_info:144] [None] Scrapy 1.4.0 started (bot: qiubai)
-INFO 2017-11-12 18:34:58 [scrapy.utils.log:log:log_scrapy_info:147] [None] Overridden settings: {'NEWSPIDER_MODULE': 'qiubai.spiders', 'ROBOTSTXT_OBEY': True, 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['qiubai.spiders'], 'BOT_NAME': 'qiubai', 'LOG_STDOUT': 2, 'LOG_FORMAT': '%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s', 'LOG_FILE': 'logs/spider.log'}
-INFO 2017-11-12 18:34:58 [scrapy.middleware:middleware:from_settings:53] [None] Enabled extensions:
+INFO 2017-11-13 17:55:11 [scrapy.utils.log:log:log_scrapy_info:144] [None] Scrapy 1.4.0 started (bot: qiubai)
+INFO 2017-11-13 17:55:11 [scrapy.utils.log:log:log_scrapy_info:147] [None] Overridden settings: {'NEWSPIDER_MODULE': 'qiubai.spiders', 'ROBOTSTXT_OBEY': True, 'LOG_LEVEL': 'INFO', 'SPIDER_MODULES': ['qiubai.spiders'], 'BOT_NAME': 'qiubai', 'LOG_STDOUT': 2, 'LOG_FORMAT': '%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s', 'LOG_FILE': 'logs/spider.log'}
+INFO 2017-11-13 17:55:11 [scrapy.middleware:middleware:from_settings:53] [None] Enabled extensions:
 ['scrapy.extensions.memusage.MemoryUsage',
  'scrapy.extensions.logstats.LogStats',
  'scrapy.extensions.telnet.TelnetConsole',
  'scrapy.extensions.corestats.CoreStats']
-INFO 2017-11-12 18:34:58 [scrapy.middleware:middleware:from_settings:53] [None] Enabled downloader middlewares:
+INFO 2017-11-13 17:55:11 [scrapy.middleware:middleware:from_settings:53] [None] Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -19,34 +19,67 @@ INFO 2017-11-12 18:34:58 [scrapy.middleware:middleware:from_settings:53] [None] 
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-INFO 2017-11-12 18:34:58 [scrapy.middleware:middleware:from_settings:53] [None] Enabled spider middlewares:
+INFO 2017-11-13 17:55:11 [scrapy.middleware:middleware:from_settings:53] [None] Enabled spider middlewares:
 ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-INFO 2017-11-12 18:34:58 [scrapy.middleware:middleware:from_settings:53] [None] Enabled item pipelines:
+INFO 2017-11-13 17:55:11 [scrapy.middleware:middleware:from_settings:53] [None] Enabled item pipelines:
 ['qiubai.pipelines.QiubaiPipeline']
-INFO 2017-11-12 18:34:58 [scrapy.core.engine:engine:open_spider:256] [None] Spider opened
-INFO 2017-11-12 18:34:58 [scrapy.extensions.logstats:logstats:log:48] [None] Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-INFO 2017-11-12 18:34:58 [scrapy.core.engine:engine:close_spider:295] [None] Closing spider (finished)
-INFO 2017-11-12 18:34:58 [scrapy.statscollectors:statscollectors:close_spider:47] [None] Dumping Scrapy stats:
-{'downloader/request_bytes': 426,
- 'downloader/request_count': 2,
- 'downloader/request_method_count/GET': 2,
- 'downloader/response_bytes': 16782,
- 'downloader/response_count': 2,
- 'downloader/response_status_count/200': 2,
+INFO 2017-11-13 17:55:11 [scrapy.core.engine:engine:open_spider:256] [None] Spider opened
+INFO 2017-11-13 17:55:11 [scrapy.extensions.logstats:logstats:log:48] [None] Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO 2017-11-13 17:55:14 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/2/'
+INFO 2017-11-13 17:55:19 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/3/'
+INFO 2017-11-13 17:55:24 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/4/'
+INFO 2017-11-13 17:55:29 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/5/'
+INFO 2017-11-13 17:55:35 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/6/'
+INFO 2017-11-13 17:55:40 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/7/'
+INFO 2017-11-13 17:55:45 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/8/'
+INFO 2017-11-13 17:55:51 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/9/'
+INFO 2017-11-13 17:55:56 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/10/'
+INFO 2017-11-13 17:56:01 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/11/'
+INFO 2017-11-13 17:56:06 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/12/'
+INFO 2017-11-13 17:56:11 [scrapy.extensions.logstats:logstats:log:48] [None] Crawled 12 pages (at 12 pages/min), scraped 275 items (at 275 items/min)
+INFO 2017-11-13 17:56:12 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/13/'
+INFO 2017-11-13 17:56:17 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/week/'
+INFO 2017-11-13 17:56:22 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/2/'
+INFO 2017-11-13 17:56:28 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/3/'
+INFO 2017-11-13 17:56:33 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/4/'
+INFO 2017-11-13 17:56:38 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/5/'
+INFO 2017-11-13 17:56:43 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/6/'
+INFO 2017-11-13 17:56:49 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/7/'
+INFO 2017-11-13 17:56:54 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/8/'
+INFO 2017-11-13 17:56:59 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/9/'
+INFO 2017-11-13 17:57:05 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/10/'
+INFO 2017-11-13 17:57:10 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/11/'
+INFO 2017-11-13 17:57:15 [scrapy.extensions.logstats:logstats:log:48] [None] Crawled 24 pages (at 12 pages/min), scraped 575 items (at 300 items/min)
+INFO 2017-11-13 17:57:15 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/12/'
+INFO 2017-11-13 17:57:20 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/8hr/page/13/'
+INFO 2017-11-13 17:57:26 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/'
+INFO 2017-11-13 17:57:31 [qiubai_spider:qiubai_spider:parse:46] [None] page:u'\u4e0b\u4e00\u9875',next_page:u'https://www.qiushibaike.com/hot/page/2/'
+INFO 2017-11-13 17:57:36 [scrapy.core.engine:engine:close_spider:295] [None] Closing spider (finished)
+INFO 2017-11-13 17:57:36 [scrapy.statscollectors:statscollectors:close_spider:47] [None] Dumping Scrapy stats:
+{'downloader/request_bytes': 12261,
+ 'downloader/request_count': 30,
+ 'downloader/request_method_count/GET': 30,
+ 'downloader/response_bytes': 452687,
+ 'downloader/response_count': 30,
+ 'downloader/response_status_count/200': 28,
+ 'downloader/response_status_count/301': 1,
+ 'downloader/response_status_count/302': 1,
+ 'dupefilter/filtered': 1,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2017, 11, 12, 10, 34, 58, 612118),
- 'item_scraped_count': 25,
- 'log_count/INFO': 7,
- 'memusage/max': 47226880,
- 'memusage/startup': 47222784,
- 'response_received_count': 2,
- 'scheduler/dequeued': 1,
- 'scheduler/dequeued/memory': 1,
- 'scheduler/enqueued': 1,
- 'scheduler/enqueued/memory': 1,
- 'start_time': datetime.datetime(2017, 11, 12, 10, 34, 58, 267474)}
-INFO 2017-11-12 18:34:58 [scrapy.core.engine:engine:<lambda>:326] [None] Spider closed (finished)
+ 'finish_time': datetime.datetime(2017, 11, 13, 9, 57, 36, 545734),
+ 'item_scraped_count': 675,
+ 'log_count/INFO': 36,
+ 'memusage/max': 71446528,
+ 'memusage/startup': 47239168,
+ 'request_depth_max': 27,
+ 'response_received_count': 28,
+ 'scheduler/dequeued': 29,
+ 'scheduler/dequeued/memory': 29,
+ 'scheduler/enqueued': 29,
+ 'scheduler/enqueued/memory': 29,
+ 'start_time': datetime.datetime(2017, 11, 13, 9, 55, 11, 801038)}
+INFO 2017-11-13 17:57:36 [scrapy.core.engine:engine:<lambda>:326] [None] Spider closed (finished)

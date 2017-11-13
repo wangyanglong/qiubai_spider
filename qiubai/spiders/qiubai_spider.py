@@ -1,24 +1,26 @@
-# coding: UTF-8
+# --*-- coding: utf-8 --*--
 
 from scrapy import Request
 from scrapy.spiders import Spider
 from qiubai.items import QiubaiItem
 from qiubai import const
-
+from urlparse import urljoin
+import time
 
 class qiubai_spider(Spider):
 	name = "qiubai_spider"
-	start_urls = ['https://www.qiushibaike.com/']
+	start_urls = ['https://www.qiushibaike.com/hot']
 	# def start_request(self,url):
 	# 	url = 'https://www.qiushibaike.com/hot'
 	# 	yield Request(url,callback= self.parse)
 
 	def parse(self,response):
-		domain = 'https://www.qiushibaike.com'
+		domain = 'https://www.qiushibaike.com/hot'
 		article_iterator = response.xpath('//div[@id="content-left"]/div[contains(@class,"article block")]')
 		for article in article_iterator:
 			item = QiubaiItem()
 			item['_qid'] = article.xpath('.//@id').extract_first()
+			item['_update'] = int(time.time())
 			try:
 				item['_type'] = article.xpath('.//@class').extract_first()
 				try:
@@ -37,3 +39,10 @@ class qiubai_spider(Spider):
 				item['_status'] = const.SPIDER_STATUS_FAILED
 				self.logger.error('parse item error:%r',e)
 			yield item
+		next_iterator = response.xpath('//*[@id="content-left"]/ul/li')
+		for page in next_iterator:
+			if page.xpath('.//a/span[@class="next"]').extract_first():
+				next_page = urljoin(domain,page.xpath('.//a/@href').extract_first())
+				self.logger.info('page:%r,next_page:%r',u'下一页',next_page)
+				time.sleep(5)
+				yield Request(next_page, callback=self.parse)
