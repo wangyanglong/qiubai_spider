@@ -9,7 +9,7 @@ import time
 
 class qiubai_spider(Spider):
 	name = "qiubai_spider"
-	start_urls = ['https://www.qiushibaike.com/hot']
+	start_urls = ['https://www.qiushibaike.com/hot','https://www.qiushibaike.com/history/','https://www.qiushibaike.com/text/']
 	# def start_request(self,url):
 	# 	url = 'https://www.qiushibaike.com/hot'
 	# 	yield Request(url,callback= self.parse)
