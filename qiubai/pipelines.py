@@ -9,6 +9,8 @@ import const
 import MySQLdb
 import datetime
 
+#pip install mysqlclient
+
 """
 CREATE TABLE IF NOT EXISTS `wp_spider`(
     `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -72,8 +74,6 @@ class QiubaiPipeline(object):
                 sql = insert_sql%(cur_time,cur_time,item['_qid'].encode('utf-8'),
                     author,item['_type'].encode('utf-8'),item['_url'].encode('utf-8'),
                     item['_content'],pic,like,int(item['_status']))
-                print "sql",sql
-                print "end"
                 self.cursor.execute(sql)
             else:
                 like = item['_like']
