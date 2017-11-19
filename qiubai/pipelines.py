@@ -9,6 +9,27 @@ import const
 import MySQLdb
 import datetime
 
+"""
+CREATE TABLE IF NOT EXISTS `wp_spider`(
+    `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+    `_update` datetime DEFAULT NULL COMMENT '更新时间',
+    `_create` datetime NOT NULL COMMENT '创建时间',
+    `_qid` varchar(80) NOT NULL unique COMMENT '文章ID',
+    `_author` varchar(80) DEFAULT NULL COMMENT '作者ID',
+    `_type` varchar(120) NOT NULL COMMENT '文章类型',
+    `_url`  varchar(80) NOT NULL COMMENT '文章链接',
+    `_content` blob NOT NULL COMMENT '正文',
+    `_pic`  varchar(500) DEFAULT NULL COMMENT '配图',
+    `_like` bigint(20) DEFAULT 0 COMMENT '原始喜欢数',
+    `_status` tinyint DEFAULT 0 COMMENT '爬虫状态',
+    PRIMARY KEY ( `ID` ),
+    KEY `_create` (`_create`),
+    KEY `_update` (`_update`),
+    KEY `_like` (`_like`),
+    KEY `_status` (`_status`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8
+"""
+
 insert_sql ="INSERT INTO `wp_spider`(`_update`,"\
 "`_create`,`_qid`,`_author`,`_type`,`_url`,`_content`,`_pic`,`_like`,`_status`)"\
 "VALUES(%r,%r,'%s',%r,'%s','%s','%s',%r,%d,%d)"
